@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "8aceca89-58ba-4edc-8a0b-b655d8916a9d",
+		"name": "toDo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32386297"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Md.Kabir\",\r\n    \"email\":\"h.kabir1716@gmail.com\",\r\n    \"phone\":\"+8801614427979\",\r\n    \"username\":\"kabir483\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/register-profile",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"register-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"kabir483\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/login-profile",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login-profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"h.kabir17@gmail.com\",\r\n    \"phone\":\"+8801614427970\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/single-profile-update",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"single-profile-update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all-profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/all-profiles",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"all-profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "single-profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/single-profile/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"single-profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Todo two\",\r\n    \"description\":\"Hello Bangladesh This is todo Two\",\r\n    \"complete\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/create-todo",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"create-todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Todo One updated\",\r\n    \"description\":\"Hello Bangladesh This is todo one updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/update-todo",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"update-todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read-todo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/read-todo",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"read-todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-todo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/delete-todo",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"delete-todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "complete-todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token-key",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"completed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/complete-todo",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"complete-todo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
